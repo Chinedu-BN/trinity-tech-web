@@ -2,8 +2,8 @@ const express = require('express')
 const app = express()
 const port = process.env.PORT || 5000;
 
-app.get('/', (req, res) => {
-    res.send(_path +'/trinity.html')
+app.use('/',async (req, res, next) => {
+res.sendFile(__path + '/trinity.html')
 })
 
 app.listen(port, () => {
